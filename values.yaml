@@ -1,0 +1,7 @@
+configmap:
+  port: 8080
+service:
+  port: 32134
+deployment:
+  imageversion: 0.0.1
+  replicas: 2

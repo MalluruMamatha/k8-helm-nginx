@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+    project: expense
+spec:
+  replicas: {{ .Values.deployment.replicas }}
+  selectors:
+    matchLabels:
+      app: nginx
+      project: expense
+  template:
+    metadata:
+      app: nginx
+      project: expense
+    spec: 
+      containers:
+      - name: nginx
+        image: nginx:{{ .Values.deployment.imageversion }}
+
+
